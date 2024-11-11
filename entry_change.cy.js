@@ -13,6 +13,9 @@ describe('Log in', function () {
     cy.get('[data-test-id="Адреса проживающих"]').click();
     cy.wait(2000);
     cy.get("[id='5354']").should('be.visible').trigger('mouseover')
-    cy.get("#5354").find('[data-cy="btn-edit"]').should('be.visible').click();
+    cy.get("#5354").find('[data-cy="btn-edit"]').click();
+    cy.get("input[data-test-id='Название района']").clear().type('Тестовое задание 2');
+    cy.get("input[data-test-id='Номер в списке']").click().clear().type('101')
+    cy.contains("Сохранить").click();
   })
 });
